@@ -595,7 +595,12 @@ ul.callbacks_tabs.callbacks2_tabs {
 /*--ends-dhavan--*/
 /*--starts-contact--*/
 .contact{
+	width: 1024px;
+	height: 473px;  /*448+25*/
+	text-align: center;
+	margin: auto;
 	position:relative;
+	/*display:inline-block;*/
 }
 .contact-top {
 	position: absolute;
@@ -609,9 +614,28 @@ ul.callbacks_tabs.callbacks2_tabs {
 	text-align: center;
 	border: 1px solid rgba(153, 153, 153, 0.6);
 }
+#gmap_canvas{
+	float: left;
+}
+#gmap_canvas img{	
+	max-width:none!important;
+	background:none!important
+}
+.contact-left{
+	width:70%; /*716.8px*/
+	height:448px;
+	margin-right: 0px;
+}
 .contact-left iframe{
-	width:70%;
-	height:650px;
+	/*float: left;*/
+	width: 100%; /*716.8px*/
+	height:auto;
+}
+.contact-right{
+	width: 30%;
+	height: 448px;
+	float: left;
+	border: 1px solid black;
 }
 .contact-top input[type="text"] {
 	padding: 10px 10px;
@@ -1190,7 +1214,7 @@ ul#filters {
 	top: 140%;
 }
 .contact iframe {
-	height: 600px;
+	height: 448px;
 }
 .contact-top {
 	width: 34%;
@@ -1250,9 +1274,6 @@ font-size: 17px;
 }
 .dhavan-right h3 {
 	font-size: 1.6em;
-}
-.contact iframe {
-	height: 530px;
 }
 .contact-top {
 	height: 74%;

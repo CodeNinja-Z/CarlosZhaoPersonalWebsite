@@ -29,7 +29,11 @@
   <link rel="stylesheet" type="text/css" href="js/fancybox/jquery.fancybox.css" media="all">
   <script src="js/fancybox/jquery.fancybox-1.2.1.js"></script>
 
-  <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+  <script type="application/x-javascript"> 
+        addEventListener("load", function() 
+            { setTimeout(hideURLbar, 0); }, false); 
+        function hideURLbar(){ window.scrollTo(0,1); } 
+  </script>
   <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
   <link href="css/style.css" rel='stylesheet' type='text/css' />
   <link href='http://fonts.googleapis.com/css?family=Roboto:400,300italic,300,100italic,100,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
@@ -106,8 +110,8 @@
   <div class="time">
     <div class="container">
       <div class="time-top">
-        <h3>At the same time that we are earnest to explore & learn all things</h3>
-        <p>This is Carlos Zhao's personal website for career development. I am a junior developer who is passionate about web developing on both front and server ends.</p>
+        <h3>At the same time I am keen to explore & learn new skills</h3>
+        <p>This is Carlos Zhao's personal website for career development. I am a junior developer who is passionate about web developing on both front and server ends. Software developing is also my favor. For interested employers, please reach me at the lower section of page.</p>
       </div>
       <div class="time-bottom">
         <div class="col-md-4 about-bottom-one">
@@ -124,28 +128,51 @@
     </div>
   </div>
 
+  <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
+   <a href='http://casinothrill.net'>Google Map</a> <script type='text/javascript' src='http://embedmaps.com/google-maps-authorization/script.js?id=35a7cdad219ce0bbcb429cd3fd3dc74c6d2edce7'></script>
+  <script type='text/javascript'> 
+        function init_map(){
+            var myOptions = {
+                  zoom:15,center:new google.maps.LatLng(43.65305499999999,-79.39088730000003),
+                  mapTypeId: google.maps.MapTypeId.ROADMAP};
+            map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
+            marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(43.65305499999999,-79.39088730000003)});
+            infowindow = new google.maps.InfoWindow({
+                  content:'<strong>My Place</strong><br>'+
+                  '89 McCaul Street<br>'+
+                  'M5T2X3 Toronto<br>'
+            });
+            google.maps.event.addListener(marker, 'click', function(){
+                  infowindow.open(map,marker);
+            });
+            infowindow.open(map,marker);
+        }
+        google.maps.event.addDomListener(window, 'load', init_map);
+  </script>
+
   <!--starts-contact-->
   <div class="contact" id="contact">
-      <div class ="contact-left">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d81739.3742577089!2d19.30126135000001!3d50.1918866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716c280d607cca1%3A0xe0bf75d070d5e1d5!2sJaworzno%2C+Poland!5e0!3m2!1sen!2sin!4v1416998950831" width="600" height="450" frameborder="0" style="border:0">      </iframe>
-            <div class="container">
-              <div class="contact-top">
-                  <form>
-                         <input type="text" class="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}">
-                         <input type="text" class="text" value="email address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'email address';}">
-                       <textarea value="Message" onfocus="if(this.value == 'Message') this.value='';" onblur="if(this.value == '') this.value='Your message here';">Message</textarea><br> 
-                       <div class="sub-button">
-                      <input name="submit" type="submit" value="">
-                    </div>                
-                  </form>
-              </div>
-            </div>
-      </div>
-      <div class="contact-right" style="float: right">
+      <!-- <div class ="contact-left"> -->
+        <!-- <div style='overflow:hidden;height:448px;width:716.8px;'> -->
+        <div id='gmap_canvas' style='height:448px;width:716.8px;'></div> 
+        <!-- </div> -->
+        <div class="contact-right">
             <h3>Socialize</h3>
             <img src="img/icon_fb.png" alt=""> <img src="img/icon_twitter.png" alt=""> <img src="img/icon_in.png" alt=""> 
-      </div>
-      <div style="clear:both"></div> 
+        </div>
+
+        <div class="contact-top">
+            <form>
+                 <input type="text" class="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}">
+                 <input type="text" class="text" value="email address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'email address';}">
+                 <textarea value="Message" onfocus="if(this.value == 'Message') this.value='';" onblur="if(this.value == '') this.value='Your message here';">Message</textarea><br> 
+                 <div class="sub-button">
+                      <input name="submit" type="submit" value="">
+                 </div>                
+            </form>
+        </div>
+
+        <div style="clear:both"></div> 
   </div>
   <!--End-contact-->
 
