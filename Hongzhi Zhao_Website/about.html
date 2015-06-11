@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Rotating Image Slider with jQuery & CSS3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">	
+<meta charset="UTF-8" />
+<meta name="description" content="Rotating Image Slider with jQuery & CSS3" />
+<meta name="keywords" content="jquery, rotation, slider, images, slideshow, autoplay, play, pause, css3"/>
+<meta name="author" content="Codrops" />
+
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<link href="css/style_2.css" rel='stylesheet' type='text/css' />
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,300italic,300,100italic,100,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css' />
+
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script type="text/javascript" src="js/jquery.min.js"></script> 
+ 
+<script type="text/javascript" src="js/jquery.transform-0.9.3.min_.js"></script>
+<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="js/jquery.RotateImageMenu.js"></script>
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script> 
+<!-- <script src="js/jquery-1.11.0.min.js"></script> -->
+<script src="js/myscript.js"> </script>
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+
+<!---- start-smooth-scrolling---->
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+		</script>
+<!---end-smooth-scrolling-->
+<!--start-top-nav-script-->
+		<script>
+			$(function() {
+				var pull 		= $('#pull');
+					menu 		= $('nav ul');
+					menuHeight	= menu.height();
+				$(pull).on('click', function(e) {
+					e.preventDefault();
+					menu.slideToggle();
+				});
+				$(window).resize(function(){
+	        		var w = $(window).width();
+	        		if(w > 320 && menu.is(':hidden')) {
+	        			menu.removeAttr('style');
+	        		}
+	    		});
+			});
+		</script>
+<!--End-top-nav-script-->
+</head>
+<body>
+	<!--start-header-->
+	<div class="header">
+		<div class="container">
+              <div class="logo" style="position: relative; left: -30px; top: -5px;">
+                  <a href="#"><img src="img/logo.gif" alt=""></a>  
+              </div>
+              <nav class='top-nav'>
+                  <ul class="top-nav">
+                      <li><a href="index.html">HOME</a></li>
+                      <li><a href="about.html">ABOUT ME</a></li>
+                      <li><a href="skills.html">SKILLS</a></li>
+                      <li><a href="index.html #contact" class="scroll">CONTACT ME</a></li>
+                  </ul>
+              </nav>
+			<div class="clearfix"> </div>
+		</div>
+    </div>
+	<!--End-header-->
+
+	<div class="rm_wrapper">
+		<div id="rm_container" class="rm_container">
+			<ul>
+				<li data-images="rm_container_1" data-rotation="-15">
+					<img src="images/1.jpg"/>
+				</li>
+				<li data-images="rm_container_2" data-rotation="-5">
+					<img src="images/2.jpg"/>
+				</li>
+				<li data-images="rm_container_3" data-rotation="5">
+					<img src="images/3.jpg"/>
+				</li>
+				<li data-images="rm_container_4" data-rotation="15">
+					<img src="images/4.jpg"/>
+				</li>
+			</ul>
+			<div id="rm_mask_left" class="rm_mask_left"></div>
+			<div id="rm_mask_right" class="rm_mask_right"></div>
+			<div id="rm_corner_left" class="rm_corner_left"></div>
+			<div id="rm_corner_right" class="rm_corner_right"></div>
+			<h2>Fashion Explosion 2012</h2>
+			<div style="display:none;">
+				<div id="rm_container_1">
+					<img src="images/1.jpg"/>
+					<img src="images/5.jpg"/>
+					<img src="images/6.jpg"/>
+					<img src="images/7.jpg"/>
+				</div>
+				<div id="rm_container_2">
+					<img src="images/2.jpg"/>
+					<img src="images/8.jpg"/>
+					<img src="images/9.jpg"/>
+					<img src="images/10.jpg"/>
+				</div>
+				<div id="rm_container_3">
+					<img src="images/3.jpg"/>
+					<img src="images/11.jpg"/>
+					<img src="images/12.jpg"/>
+					<img src="images/13.jpg"/>
+				</div>
+				<div id="rm_container_4">
+					<img src="images/4.jpg"/>
+					<img src="images/14.jpg"/>
+					<img src="images/15.jpg"/>
+					<img src="images/16.jpg"/>
+				</div>
+			</div>
+		</div>
+		<div class="rm_nav">
+			<a id="rm_next" href="#" class="rm_next"></a>
+			<a id="rm_prev" href="#" class="rm_prev"></a>
+		</div>
+		<div class="rm_controls">
+			<a id="rm_play" href="#" class="rm_play">Play</a>
+			<a id="rm_pause" href="#" class="rm_pause">Pause</a>
+		</div>
+	</div>
+
+	<!--starts-about-->
+	<div class="about">
+		<div class="container">
+			<div class="about-top">
+				<h3>ABOUT</h3>
+			</div>
+				<div class="about-bottom">
+					<div class="col-md-4 about-one">
+						<span class="one"> </span>
+						<h4>EUISMOD</h4>
+						<p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque sed dolor.</p>
+					</div>
+					<div class="col-md-4 about-one">
+						<span class="two"> </span>
+						<h4>VESTIBULUM</h4>
+						<p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque sed dolor.</p>
+					</div>
+					<div class="col-md-4 about-one">
+						<span class="tre"> </span>
+						<h4>FUSCE EUISMOD</h4>
+						<p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque sed dolor.</p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+		</div>
+	</div>
+	<!--End-about-->
+
+			<!--Responsive-tabs-Starts-Here-->
+	<div class="responsive-tabs" id="project">
+		<div class="container">
+			<div class="tabs-box clock wow bounceIn">
+			<ul class="tabs-menu">
+				<li><a href="#tab1">Education</a></li>
+				<li><a href="#tab2">Interests & Hobbies</a></li>
+				<li><a href="#tab3">Volunteer & Memberships</a></li>
+			</ul>
+			<div class="clearfix"> </div>
+			<div class="tab-grids">
+				<div id="tab1" class="tab-grid">
+						<p>	University of Toronto &dash;&dash; Toronto, Canada<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;Honors Bachelor Degree of Science (Nov 2014)<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;Majors: Computer Science & Statistics<br>
+						</p>
+						<p>Ngee Ann Polytechnic &dash;&dash; Singapore, enjoyed full scholarship from government<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;Diploma of Computer and Electronic Engineering (May 2011)
+						</p>
+   				</div>
+				<div id="tab2" class="tab-grid">
+						<p>Reading, Chess, Sudoku, Game Design, Ukulele, Fitness, Rollerblading, Dancing, Fencing, Cooking</p>
+   				</div>
+				<div id="tab3" class="tab-grid">
+						<p>Volunteer, Public charitable events organized by my church, Singapore (2008 &dash; 2011)<br>
+						Member, Rollerblade club, Ngee Ann Polytechnic, Singapore (2008 &dash; 2011)<br>
+						Member, Latin dance club, University of Toronto, Canada (2013 &dash; 2014)<br>
+						Member, Kendo club, University of Toronto, Canada (2014 &dash; 2015)
+						</p>
+   				</div>
+			</div>
+			</div>
+		</div>
+
+	</div>
+<!--Responsive-tabs-ends-Here-->
+<!--starts-footer-->
+  <div class="footer">
+      <div class="container">
+        <div class="footer-main">
+          <p>&copy 2015 by <a href="#">Carlos Zhao</a></p>
+        </div>
+      </div>
+       <!--   <script type="text/javascript">
+                $(document).ready(function() {
+                  /*
+                  var defaults = {
+                      containerID: 'toTop', // fading element id
+                    containerHoverID: 'toTopHover', // fading element hover id
+                    scrollSpeed: 1200,
+                    easingType: 'linear' 
+                  };
+                  */
+                  
+                  $().UItoTop({ easingType: 'easeOutQuart' });
+                  
+                });
+              </script>  -->
+      <a href="#home" id="toTop" class="scroll" style="display: block;"> 
+        <!-- <span id="toTopHover" style="opacity: 1;"> </span></a> -->
+  </div>
+  <!--End-footer-->
+</body>
+</html>

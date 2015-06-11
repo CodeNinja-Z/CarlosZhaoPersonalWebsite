@@ -16,6 +16,7 @@ p {margin: 0;}
 html, body{
    font-family: 'Roboto', sans-serif;
    font-size: 100%;
+   /*font-size:16px;*/
    background:#fff; 
 }
 body a{
@@ -29,7 +30,7 @@ a{
 	color:#000;
 	text-decoration:none;
 }
-/*--start-header--*/
+/*--start-header--
 .banner{
 /*	background:url(../img/banner.jpg) no-repeat;
 	background-size:100% 100%;
@@ -58,7 +59,7 @@ a{
 	font-size: 18px;
 	text-align: center;
 	position: relative;
-	/*top: 27px;*/
+	top: 27px;
 	font-weight: 300;
 	text-decoration: none;
 	padding: 0px 18px 0px 18px;
@@ -78,33 +79,28 @@ a{
 /* top-nav */
 .header {
 	background: #55adb7;
-	height: 128px;
-	/*padding:1em 0px;*/
+	padding:1em 0px;
 }
 nav {
 	position: relative;
 	float: right;
-	height: 128px;
 }
 nav ul {
-	height: 128px;
+	padding: 0;
 	float: right;
-	/*padding-top: 2px;*/
+	padding-top: 2px;
 	color:#dce3e4;
 }
 nav li {
 	display: inline-block;
 	position:relative;
-	vertical-align: center;
-	height: 128px;
-	line-height: 128px;
 }
 nav a {
 	color: #fff;
 	display: inline-block;
 	text-align: center;
 	text-decoration: none;
-	/*line-height: 40px;*/
+	line-height: 40px;
 }
 nav a:hover{
 	text-decoration:none;
@@ -161,7 +157,7 @@ nav a#pull {
 	nav ul {
 		display: none;
 		height: auto;
-		/*margin:1.3em 0 0px 0px;*/
+		margin:1.3em 0 0px 0px;
 		background:#fff;
 		color:#fff;
 		padding-top: 14px;
@@ -418,8 +414,8 @@ a.nivo-prevNav {background:url(../img/slide-next-prev.png) left no-repeat;left:5
 .contact-right-top{
 	text-align:center;
 	position:relative;
-	top: -10px;
-	/*border: 1px solid #d0d0d0;*/
+	top: 5px;
+	border: 1px solid #d0d0d0;
 }
 .contact-right-top h3, p{
 	color: #cbcbcb;
@@ -427,8 +423,8 @@ a.nivo-prevNav {background:url(../img/slide-next-prev.png) left no-repeat;left:5
 .contact-right-bottom{
 	text-align:center;
 	position:relative;
-	top: -10px;
-	/*border: 1px solid #d8d8d8;*/
+	top:20px;
+	border: 1px solid #d8d8d8;
 }
 .contact-right input[type="text"] {
 	padding: 10px 10px;
@@ -1779,4 +1775,4 @@ div#tab1 p, div#tab2 p, div#tab3 p {
 	background:transparent url(../images/pause.png) no-repeat center left;
 }
 /* End-Rotating-Image-Slider-Style*/
-/*--mediaquaries-ends--*/
+/*--mediaquaries-ends--
