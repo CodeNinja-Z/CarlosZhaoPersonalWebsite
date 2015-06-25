@@ -83,7 +83,8 @@ $(function() {
 							stopSlideshow();
 							rotateImages(1);
 						}	
-						return false;
+						// return false;
+						return true;
 					}).keydown(function(e){
 						switch(e.which){
 							case 37:
